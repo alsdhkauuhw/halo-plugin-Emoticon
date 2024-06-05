@@ -1,0 +1,46 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: foo-setting
+spec:
+  forms:
+    - group: group_1
+      label: 分组 1
+      formSchema:
+        - $formkit: repeater
+          name: socials
+          label: 表情包管理
+          value: []
+          children:
+            - $formkit: select
+              name: enabled
+              id: enabled
+              label: 是否启用
+              options:
+                - label: 是
+                  value: true
+                - label: 否
+                  value: false
+            - $formkit: text
+              # 在 Repeater 中进行条件判断的方式，当 enabled 为 true 时才显示
+              if: "$value.enabled === true",
+              name: name
+              label: key
+              value: ""
+            - $formkit: text
+              if: "$value.enabled === true",
+              name: url
+              label: value
+              value: ""
+
+    - group: group_2
+      label: 分组 2
+      formSchema:
+        - $formkit: text
+          name: username
+          label: 用户名
+          value: ""
+        - $formkit: password
+          name: password
+          label: 密码
+          value: ""

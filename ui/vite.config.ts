@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from "url";
-
 import { defineConfig } from "vite";
 import Vue from "@vitejs/plugin-vue";
 import VueJsx from "@vitejs/plugin-vue-jsx";
@@ -18,4 +17,10 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      // external: ["@formkit/themes/genesis/dist/formkit-theme-genesis.css"],
+    },
+  },
+  theme: "genesis",
 });

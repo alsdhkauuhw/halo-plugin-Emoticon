@@ -1,8 +1,12 @@
 package run.halo.starter;
 
 import org.springframework.stereotype.Component;
+
+import run.halo.app.extension.Scheme;
+import run.halo.app.extension.SchemeManager;
 import run.halo.app.plugin.BasePlugin;
 import run.halo.app.plugin.PluginContext;
+import run.halo.starter.model.Emoticon;
 
 /**
  * <p>Plugin main class to manage the lifecycle of the plugin.</p>
@@ -15,17 +19,24 @@ import run.halo.app.plugin.PluginContext;
 @Component
 public class StarterPlugin extends BasePlugin {
 
-    public StarterPlugin(PluginContext pluginContext) {
+    private final SchemeManager schemeManager;
+    public StarterPlugin(PluginContext pluginContext, SchemeManager schemeManager) {
         super(pluginContext);
+        this.schemeManager = schemeManager;
     }
 
     @Override
     public void start() {
+        // 插件启动时注册自定义模型
+        schemeManager.register(Emoticon.class);
         System.out.println("插件启动成功！");
     }
 
     @Override
     public void stop() {
+        // 插件停用时取消注册自定义模型
+        Scheme todoScheme = schemeManager.get(Emoticon.class);
+        schemeManager.unregister(todoScheme);
         System.out.println("插件停止！");
     }
 }

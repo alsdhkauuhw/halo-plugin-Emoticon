@@ -4,19 +4,19 @@ apiVersion: plugin.halo.run/v1alpha1
 kind: Plugin
 metadata:
   # The name defines how the plugin is invoked, A unique name
-  name: starter
+  name: Emoticon
 spec:
   enabled: true
   requires: ">=2.11.0"
   author:
-    name: Halo
-    website: https://github.com/halo-dev
+    name: LeiYe
+    website: https://github.com/alsdhkauuhw
   logo: logo.png
-  homepage: https://github.com/halo-dev/plugin-starter#readme
-  repo: https://github.com/halo-dev/plugin-starter
-  issues: https://github.com/halo-dev/plugin-starter/issues
-  displayName: "插件快速开始模板"
-  description: "这是一个插件快速开始模板"
+  homepage: https://github.com/alsdhkauuhw/halo-plugin-Emoticon#readme
+  repo: https://github.com/alsdhkauuhw/halo-plugin-Emoticon
+  issues: https://github.com/alsdhkauuhw/halo-plugin-Emoticon/issues
+  displayName: "Halo 表情包插件"
+  description: "Halo 开源建站工具基于 Headless 编辑器 Tiptap 提供了开箱即用且可扩展的富文本编辑器，该项目希望实现一个编辑器的表情包插件，支持用户在编辑文章时插入特定的表情包。"
   license:
     - name: "GPL-3.0"
       url: "https://github.com/halo-dev/plugin-starter/blob/main/LICENSE"
