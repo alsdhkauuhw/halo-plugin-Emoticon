@@ -1,35 +1,31 @@
-# plugin-starter
+# halo-plugin-codeInjectionPro
 
-Halo 2.0 插件开发快速开始模板。
+Halo 开源建站工具基于 Headless 编辑器 Tiptap 提供了开箱即用且可扩展的富文本编辑器，该项目希望实现一个编辑器的表情包插件，支持用户在编辑文章时插入特定的表情包  
+如果您在使用本插件的过程中发现了BUG或新的建议，欢迎您在 [Github ISSUE](https://github.com/alsdhkauuhw/halo-plugin-Emoticon/issues/new) 中提出  
 
-## 开发环境
+## ✨特性
 
-插件开发的详细文档请查阅：<https://docs.halo.run/developer-guide/plugin/introduction>
+- 在顶部工具栏添加表情包或'/'命令插入表情包  
+- 支持对表情包批量操作(增加删除，导入导出，分组)
+- 统计常用表情包，便捷用户的选择
 
-所需环境：
+## 💻使用方式
 
-1. Java 17
-2. Node 18
-3. pnpm 8
-4. Docker (可选)
+## 🤖兼容性
 
-克隆项目：
+## 🏗开发日志
+
+## 🧑‍💻开发环境
+
+插件开发的详细文档请查阅：<https://docs.halo.run/developer-guide/plugin/hello-world>
 
 ```bash
-git clone git@github.com:halo-sigs/plugin-starter.git
-
-# 或者当你 fork 之后
-
-git clone git@github.com:{your_github_id}/plugin-starter.git
+git clone https://github.com/alsdhkauuhw/halo-plugin-Emotion.git
 ```
 
 ```bash
 cd path/to/plugin-starter
 ```
-
-### 运行方式 1（推荐）
-
-> 此方式需要本地安装 Docker
 
 ```bash
 # macOS / Linux
@@ -41,26 +37,20 @@ cd path/to/plugin-starter
 
 ```bash
 # macOS / Linux
-./gradlew haloServer
-
-# Windows
-./gradlew.bat haloServer
-```
-
-执行此命令后，会自动创建一个 Halo 的 Docker 容器并加载当前的插件，更多文档可查阅：<https://docs.halo.run/developer-guide/plugin/basics/devtools>
-
-### 运行方式 2
-
-> 此方式需要使用源码运行 Halo
-
-编译插件：
-
-```bash
-# macOS / Linux
 ./gradlew build
 
 # Windows
 ./gradlew.bat build
+```
+
+运行 Halo插件  
+
+```bash
+# macOS / Linux
+./gradlew haloServer
+
+# Windows
+./gradlew.bat haloServer
 ```
 
 修改 Halo 配置文件：
@@ -73,4 +63,11 @@ halo:
       - "/path/to/plugin-starter"
 ```
 
-最后重启 Halo 项目即可。
+## 🧑‍💼发布
+
+## 📄参考文档
+
+- [Halo官方文档](https://docs.halo.run)
+- [Halo插件开发](https://blog.mczhengyi.top/archives/halo-plugin-dev-vditor-markdown-prepare)
+- [Tiptap Docs](https://tiptap.dev/docs/editor/guide/custom-extensions#input-rules)
+- [java反应式编程](https://projectreactor.io/docs/core/release/reference/#intro-reactive)
